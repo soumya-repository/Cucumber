@@ -20,9 +20,7 @@ public class HomePageStepDefinition {
 
     @Given("User is on Green cart home page")
     public void user_is_on_green_cart_home_page() {
-        System.setProperty("webdriver.chrome.driver","./src/test/resources/drivers/chromedriver.exe");
-        testContextSetup.driver = new ChromeDriver();
-        testContextSetup.driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+        testContextSetup.testBase.getDriver();
     }
     @When("User search with short name {string} and extracted actual name of product")
     public void user_search_with_short_name_and_extracted_actual_name_of_product(String shortName) throws InterruptedException {

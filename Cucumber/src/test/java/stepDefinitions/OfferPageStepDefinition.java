@@ -26,6 +26,7 @@ public class OfferPageStepDefinition {
     public void user_search_with_same_short_name_in_offer_page(String shortName) throws InterruptedException {
         OfferPage offerPage = testContextSetup.pageObjectManager.getOfferPageObject();
         offerPage.navigateToOfferPage();
+        testContextSetup.genericUtils.switchToSecondaryWindow();
         offerPage.search(shortName);
         Thread.sleep(1000);
         offerPageText = offerPage.getSearchResult();

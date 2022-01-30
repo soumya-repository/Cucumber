@@ -2,12 +2,15 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import util.GenericUtils;
+import util.TestContextSetup;
 
 import java.util.Iterator;
 import java.util.Set;
 
 public class OfferPage {
     WebDriver driver;
+    TestContextSetup testContextSetup;
     public OfferPage(WebDriver driver){
         this.driver = driver;
     }
@@ -25,10 +28,5 @@ public class OfferPage {
 
     public void navigateToOfferPage(){
         driver.findElement(topDealsBtn).click();
-        Set<String> handles = driver.getWindowHandles();
-        Iterator<String> itr = handles.iterator();
-        String parent = itr.next();
-        String child = itr.next();
-        driver.switchTo().window(child);
     }
 }
