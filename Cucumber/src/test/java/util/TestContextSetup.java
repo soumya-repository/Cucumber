@@ -2,6 +2,8 @@ package util;
 
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 public class TestContextSetup {
     public String homePageText;
     public PageObjectManager pageObjectManager;
@@ -9,7 +11,7 @@ public class TestContextSetup {
     public GenericUtils genericUtils;
 
 
-    public TestContextSetup(){
+    public TestContextSetup() throws IOException {
         testBase = new TestBase();
         pageObjectManager = new PageObjectManager(testBase.getDriver());
         genericUtils = new GenericUtils(testBase.getDriver());

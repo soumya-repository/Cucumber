@@ -10,6 +10,8 @@ import org.testng.Assert;
 import pageObjects.HomePage;
 import util.TestContextSetup;
 
+import java.io.IOException;
+
 public class HomePageStepDefinition {
     public TestContextSetup testContextSetup;
     public String offerPageText;
@@ -19,7 +21,7 @@ public class HomePageStepDefinition {
     }
 
     @Given("User is on Green cart home page")
-    public void user_is_on_green_cart_home_page() {
+    public void user_is_on_green_cart_home_page() throws IOException {
         testContextSetup.testBase.getDriver();
     }
     @When("User search with short name {string} and extracted actual name of product")
